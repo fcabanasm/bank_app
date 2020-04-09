@@ -1,0 +1,24 @@
+{
+  "name": "bank_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fcabanasm/bank_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fcabanasm/bank_app/issues"
+  },
+  "homepage": "https://github.com/fcabanasm/bank_app#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "serverless-http": "^2.3.2"
+  }
+}
