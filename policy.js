@@ -103,24 +103,24 @@ const policyCalc = (policyData) => {
     { life: 0, dental: 0, workers: [] }
   );
 
-  const { workers, life, dental } = costResult;
-
   // El % de la empresa es el costo que asumirá la empresa del costo total de la
   // póliza, el resto es cubierto por cada empleado.
-  const companyPercentage = policyData.company_percentage;
-  const employeePercentage = getEmployeePercent(companyPercentage);
+  const { workers, life, dental } = costResult;
+  const { company_percentage, has_dental_care } = policyData;
+  const employees_percentage = getEmployeePercent(company_percentage);
 
   const totalCost = { life, dental };
-  const totalCoverage = getCoverage(totalCost, companyPercentage);
+  const totalCoverage = getCoverage(totalCost, company_percentage);
   const totalCopay = getCopay(totalCost, totalCoverage);
 
   const totals = {
     cost: { ...totalCost, total: getTotal(totalCost) },
     coverage: { ...totalCoverage, total: getTotal(totalCoverage) },
     copay: { ...totalCopay, total: getTotal(totalCopay) },
-    workers: policyData.workers.length,
-    company_percentage: companyPercentage,
-    employees_percentage: employeePercentage,
+    workers: workers.length,
+    company_percentage,
+    employees_percentage,
+    has_dental_care,
   };
 
   return {
