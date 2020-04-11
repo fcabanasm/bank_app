@@ -90,12 +90,10 @@ const policyCalc = (policyData) => {
         coverage: {
           ...coverage,
           total: getTotal(coverage),
-          percentage: policyData.company_percentage,
         },
         copay: {
           ...copay,
           total: getTotal(copay),
-          percentage: getEmployeePercent(policyData.company_percentage),
         },
       });
       return { life: cost.life + life, dental: cost.dental + dental, workers };
