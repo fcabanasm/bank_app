@@ -19,7 +19,7 @@
   "homepage": "https://github.com/fcabanasm/bank_app#readme",
   "dependencies": {
     "axios": "^0.19.2",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "lodash": "^4.17.15",
     "serverless-http": "^2.3.2"
   }
